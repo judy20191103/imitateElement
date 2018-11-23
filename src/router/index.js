@@ -5,6 +5,7 @@ Vue.use(Router)
 
 const login = r => require.ensure([], () => r(require('../page/login/login')), 'login')
 const home = r => require.ensure([], () => r(require('../page/home/home')), 'home')
+const city = r => require.ensure([], () => r(require('../page/city/city')), 'city')
 export default new Router({
   routes: [
     {
@@ -22,6 +23,10 @@ export default new Router({
         {
           path: '/login',
           component: login
+        },
+        {
+          path: '/city/:cityid',
+          component: city
         }
       ]
     }
